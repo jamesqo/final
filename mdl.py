@@ -109,7 +109,7 @@ def t_CO(t):
     return t
 
 def t_error(t):
-    print("TOKEN ERROR: " + str(t))
+    print(("TOKEN ERROR: " + str(t)))
 
 lex.lex()
 
@@ -378,7 +378,7 @@ def p_texture(p):
     symbols[p[2]] = ['texture', p[3:]]
 
 def p_error(p):
-    print('SYNTAX ERROR: ' + str(p))
+    print(('SYNTAX ERROR: ' + str(p)))
 
 yacc.yacc()
 
