@@ -9,7 +9,7 @@ from display import *
 from matrix import *
 from draw import *
 
-num_frames = 1
+num_frames = int(1)
 basename = "faraday"
 vary = False
 knobs = []
@@ -41,6 +41,7 @@ def first_pass(commands):
         elif op == 'vary':
             vary = True
 
+    num_frames = int(num_frames)
     for _ in range(num_frames):
         knobs.append({})
                 
@@ -86,7 +87,7 @@ def second_pass(commands, numf):
             while frame < endf:
                 knobs[int(frame)].update({key: value})
                 frame += 1
-                value += d
+                value += delta
 
 def parse_args():
     parser = ArgumentParser()
